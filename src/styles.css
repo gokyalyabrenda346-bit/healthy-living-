@@ -100,7 +100,7 @@
 
 /* ============ Ambient "goo" background ============ */
 .goo-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
-.goo { position: absolute; display: block; opacity: .62; filter: blur(54px); border-radius: 44% 56% 62% 38% / 55% 42% 58% 45%; will-change: transform, border-radius; }
+.goo { position: absolute; display: block; opacity: .8; filter: blur(50px); border-radius: 44% 56% 62% 38% / 55% 42% 58% 45%; will-change: transform, border-radius; }
 .goo-a { width: 44vw; height: 44vw; min-width: 340px; min-height: 340px; left: -12vw; top: -8vh; background: radial-gradient(circle at 32% 30%, var(--goo-mint), transparent 68%); animation: goo-morph 24s ease-in-out infinite; }
 .goo-b { width: 38vw; height: 38vw; min-width: 300px; min-height: 300px; right: -11vw; top: 20vh; background: radial-gradient(circle at 60% 40%, var(--goo-peach), transparent 70%); animation: goo-morph 31s ease-in-out infinite reverse; }
 .goo-c { width: 42vw; height: 42vw; min-width: 320px; min-height: 320px; left: 12vw; bottom: -16vh; background: radial-gradient(circle at 50% 60%, var(--goo-sage), transparent 70%); animation: goo-morph 27s ease-in-out -9s infinite; }
