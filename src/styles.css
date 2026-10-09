@@ -24,10 +24,12 @@
  --muted-foreground: oklch(0.50 0.03 210); --card: oklch(1 0 0);
  --border: oklch(0.89 0.025 70); --destructive: oklch(0.55 0.20 28);
  --peach: oklch(0.92 0.06 45); --hero-ink: oklch(0.30 0.07 210);
+ --goo-mint: oklch(0.90 0.06 175); --goo-teal: oklch(0.86 0.07 195);
+ --goo-sage: oklch(0.91 0.05 145); --goo-peach: oklch(0.90 0.07 42);
  --hero-wash: linear-gradient(90deg, oklch(0.985 0.012 80) 0%, oklch(0.985 0.012 80 / .97) 26%, oklch(0.985 0.012 80 / .80) 41%, oklch(0.985 0.012 80 / .05) 67%);
  --shadow-soft: 0 8px 28px oklch(0.25 0.04 150 / .06);
 }
-@layer base { * { border-color: var(--border); } body { margin: 0; font-family: var(--font-sans); background: var(--background); color: var(--foreground); } h1,h2,h3,p { margin: 0; } button,a,input,textarea { -webkit-tap-highlight-color: transparent; } a { text-decoration: none; } button { cursor: pointer; } ::selection { background: var(--secondary); } }
+@layer base { * { border-color: var(--border); } body { margin: 0; font-family: var(--font-sans); background: var(--background); background-image: radial-gradient(1100px 720px at 6% -6%, oklch(0.95 0.035 175 / .75), transparent 62%), radial-gradient(900px 620px at 102% 12%, oklch(0.94 0.05 45 / .6), transparent 60%); background-attachment: fixed; color: var(--foreground); } h1,h2,h3,p { margin: 0; } button,a,input,textarea { -webkit-tap-highlight-color: transparent; } a { text-decoration: none; } button { cursor: pointer; } ::selection { background: var(--secondary); } }
 .site-width { width: min(1160px, calc(100% - 80px)); margin-inline: auto; }
 .site-header { background: var(--background); position: relative; z-index: 20; border-bottom: 1px solid var(--border); }
 .header-inner { height: 94px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 40px; }
@@ -95,3 +97,40 @@
 .category-card:nth-child(3) .category-image { animation-delay: -5s; }
 .category-card:hover .category-image { animation-duration: 3s; }
 @media(prefers-reduced-motion:reduce) { .hero-image,.category-image,.about-image,.about-image img { animation:none!important; } }
+
+/* ============ Ambient "goo" background ============ */
+.goo-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.goo { position: absolute; display: block; opacity: .8; filter: blur(50px); border-radius: 44% 56% 62% 38% / 55% 42% 58% 45%; will-change: transform, border-radius; }
+.goo-a { width: 44vw; height: 44vw; min-width: 340px; min-height: 340px; left: -12vw; top: -8vh; background: radial-gradient(circle at 32% 30%, var(--goo-mint), transparent 68%); animation: goo-morph 24s ease-in-out infinite; }
+.goo-b { width: 38vw; height: 38vw; min-width: 300px; min-height: 300px; right: -11vw; top: 20vh; background: radial-gradient(circle at 60% 40%, var(--goo-peach), transparent 70%); animation: goo-morph 31s ease-in-out infinite reverse; }
+.goo-c { width: 42vw; height: 42vw; min-width: 320px; min-height: 320px; left: 12vw; bottom: -16vh; background: radial-gradient(circle at 50% 60%, var(--goo-sage), transparent 70%); animation: goo-morph 27s ease-in-out -9s infinite; }
+.goo-d { width: 30vw; height: 30vw; min-width: 260px; min-height: 260px; right: 16vw; bottom: 6vh; background: radial-gradient(circle at 45% 45%, var(--goo-teal), transparent 72%); animation: goo-morph 21s ease-in-out -13s infinite reverse; }
+@keyframes goo-morph {
+  0%,100% { transform: translate3d(0,0,0) scale(1); border-radius: 44% 56% 62% 38% / 55% 42% 58% 45%; }
+  33% { transform: translate3d(4vw,-3vh,0) scale(1.09); border-radius: 62% 38% 40% 60% / 40% 62% 38% 60%; }
+  66% { transform: translate3d(-3vw,4vh,0) scale(.93); border-radius: 38% 62% 55% 45% / 62% 40% 60% 38%; }
+}
+.goo-grain { position: absolute; inset: 0; opacity: .45; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E"); }
+.site-body { position: relative; z-index: 2; }
+
+/* bands get soft depth instead of flat colour */
+.values-band, .note-band, .page-banner, .site-footer { position: relative; overflow: hidden; }
+.values-band { background: linear-gradient(115deg, var(--secondary), var(--goo-sage) 52%, var(--secondary)); }
+.note-band { background: linear-gradient(160deg, color-mix(in oklab, var(--peach) 58%, white), var(--peach) 55%, color-mix(in oklab, var(--peach) 76%, var(--goo-teal))); }
+.page-banner { background: linear-gradient(120deg, var(--secondary), color-mix(in oklab, var(--goo-mint) 62%, white) 58%, var(--secondary)); }
+.site-footer { background: linear-gradient(180deg, var(--muted), color-mix(in oklab, var(--muted) 66%, var(--goo-peach))); }
+.values-band::before, .note-band::before, .page-banner::before, .site-footer::before,
+.values-band::after, .note-band::after, .page-banner::after, .site-footer::after {
+  content: ''; position: absolute; pointer-events: none; filter: blur(34px);
+  border-radius: 52% 48% 40% 60% / 45% 55% 45% 55%;
+}
+.page-banner::before { right: -6%; top: -70%; width: 42%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-teal) 72%, transparent), transparent 70%); }
+.page-banner::after { left: -8%; bottom: -80%; width: 34%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-peach) 68%, transparent), transparent 70%); }
+.values-band::before { left: 22%; top: -60%; width: 30%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-mint) 78%, transparent), transparent 70%); }
+.values-band::after { right: 8%; bottom: -70%; width: 26%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-sage) 78%, transparent), transparent 70%); }
+.note-band::before { left: 6%; top: -55%; width: 32%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-peach) 80%, transparent), transparent 70%); }
+.note-band::after { right: -4%; bottom: -70%; width: 30%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-teal) 55%, transparent), transparent 70%); }
+.site-footer::before { left: -6%; bottom: -60%; width: 34%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-sage) 62%, transparent), transparent 70%); }
+.site-footer::after { right: 4%; top: -70%; width: 28%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-peach) 60%, transparent), transparent 70%); }
+.values-band .site-width, .note-band .site-width, .page-banner .site-width, .site-footer .site-width { position: relative; z-index: 1; }
+@media(prefers-reduced-motion:reduce) { .goo { animation: none !important; } }
