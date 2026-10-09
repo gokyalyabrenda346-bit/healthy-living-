@@ -20,5 +20,5 @@ export const articles = [
   { id: 'sleep-routine', category: 'sleep', title: 'Build a wind-down routine that feels like you', time: '4 min read', image: windDown, body: 'Try keeping a fairly consistent waking time and giving yourself a quiet transition before bed. Dim the lights, put work aside, and choose something restful like reading or gentle stretching. A cool, quiet bedroom may help. Most adults need seven to nine hours, although needs vary. Persistent sleep difficulties, loud snoring, or significant daytime tiredness are good reasons to talk with a healthcare professional.' },
 ]
 export function pageHead(title: string, description: string) {
-  return { meta: [{ title: `${title} — Wellnest` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} — Wellnest` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }
+  return { meta: [{ title: `${title} — Healthy Living` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} — Healthy Living` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }
 }
