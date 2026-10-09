@@ -7,6 +7,22 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  vite: {
+    optimizeDeps: {
+      // Discover the shared header dependencies together with React at startup.
+      // Do not serve an old renderer alongside newly optimized hook libraries.
+      include: [
+        "@radix-ui/react-dropdown-menu",
+        "@radix-ui/react-slot",
+        "@tanstack/react-query",
+        "lucide-react",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge",
+      ],
+      ignoreOutdatedRequests: false,
+    },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
