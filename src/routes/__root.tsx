@@ -118,10 +118,19 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <SiteHeader />
-      <main><Outlet /></main>
-      <SiteFooter />
+      <div className="goo-bg" aria-hidden="true">
+        <span className="goo goo-a" />
+        <span className="goo goo-b" />
+        <span className="goo goo-c" />
+        <span className="goo goo-d" />
+        <span className="goo-grain" />
+      </div>
+      <div className="site-body">
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <SiteHeader />
+        <main><Outlet /></main>
+        <SiteFooter />
+      </div>
     </QueryClientProvider>
   );
 }
