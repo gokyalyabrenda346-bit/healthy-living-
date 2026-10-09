@@ -87,16 +87,21 @@
 @media(max-width:1050px) { .header-inner { gap:22px; }.desktop-nav { gap:20px; }.header-cta { display:none; }.header-inner { grid-template-columns:auto 1fr; }.hero h1 { font-size:56px; }.hero { height:555px; } }
 @media(max-width:700px) { .site-width { width:calc(100% - 40px); }.header-inner { height:76px; grid-template-columns:minmax(0,1fr) auto; }.brand { font-size:27px; }.desktop-nav { display:none; }.mobile-toggle { display:inline-flex; }.mobile-nav { display:grid; gap:4px; padding:8px 20px 20px; background:var(--background); border-top:1px solid var(--border); }.mobile-nav a { padding:9px 12px; font-size:14px; }.mobile-nav .eyebrow { padding:12px; }.hero { height:590px; }.hero-image { object-position:65% center; }.hero::before { background:linear-gradient(90deg, oklch(0.985 0.012 80 / .98), oklch(0.985 0.012 80 / .88) 50%, oklch(0.985 0.012 80 / .45)); }.hero-inner { padding-top:57px; }.hero h1 { font-size:45px; line-height:1.2; }.hero-description { max-width:330px; font-size:15px; }.hero-actions { gap:10px; flex-wrap:wrap; }.hero-actions a { padding-inline:16px; font-size:12px; }.values-grid { grid-template-columns:1fr; gap:21px; padding-block:27px; }.value { justify-content:start; border:0; padding-inline:15px; }.value strong { font-size:13px; }.section { padding-block:45px; }.section-title-row { align-items:start; }.section-title-row> a { font-size:11px; padding:0; margin-top:25px; }.section h2 { font-size:28px; }.section-subtitle { font-size:13px; }.category-grid,.article-grid { grid-template-columns:1fr; gap:25px; }.category-image { height:auto; aspect-ratio:1.6; }.note-band h2 { font-size:27px; }.footer-top,.footer-bottom { flex-direction:column; align-items:start; gap:22px; }.page-banner { padding-block:40px; }.page-title { font-size:36px; }.page-banner p { font-size:14px; }.content-grid { grid-template-columns:1fr; gap:35px; }.principles { grid-template-columns:1fr; gap:28px; }.form-row { grid-template-columns:1fr; }.filter-row { gap:8px; }.filter-row a { padding-inline:12px; font-size:12px; }.faq-list summary { font-size:15px; } }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
-@keyframes kenburns { 0% { transform: scale(1) translate(0,0); } 50% { transform: scale(1.12) translate(-2%,-1%); } 100% { transform: scale(1) translate(0,0); } }
-@keyframes gentle-float { 0%,100% { transform: translateY(0) scale(1.02); } 50% { transform: translateY(-8px) scale(1.06); } }
+@keyframes kenburns { 0%,100% { transform: scale(1.04) translate(0,0); } 50% { transform: scale(1.16) translate(-2%,-1%); } }
+@keyframes photo-drift { 0%,100% { transform: scale(1.08) translate(-1%,1%); } 50% { transform: scale(1.16) translate(1%,-1%); } }
+@keyframes gentle-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 .hero { overflow: hidden; }
-.hero-image { animation: kenburns 20s ease-in-out infinite; transform-origin: 70% 50%; }
-.category-card, .about-image { overflow: hidden; }
-.category-image, .about-image img, img.about-image { animation: gentle-float 8s ease-in-out infinite; }
-.category-card:nth-child(2) .category-image { animation-delay: -2.5s; }
-.category-card:nth-child(3) .category-image { animation-delay: -5s; }
-.category-card:hover .category-image { animation-duration: 3s; }
-@media(prefers-reduced-motion:reduce) { .hero-image,.category-image,.about-image,.about-image img { animation:none!important; } }
+.hero-image { animation: kenburns 14s ease-in-out infinite; transform-origin: 70% 50%; }
+.category-card { overflow: hidden; }
+.category-image { display: block; clip-path: inset(0); animation: photo-drift 10s ease-in-out infinite; }
+.category-body { position: relative; background: var(--card); }
+.article-image-frame { overflow: hidden; aspect-ratio: 1.6; border-radius: 6px; }
+.article-image-frame img { display: block; height: 100%; animation: photo-drift 10s ease-in-out infinite; }
+img.about-image { animation: gentle-float 7s ease-in-out infinite; }
+.category-card:nth-child(2) .category-image, .article-grid article:nth-child(2) img { animation-delay: -3s; }
+.category-card:nth-child(3) .category-image, .article-grid article:nth-child(3) img { animation-delay: -6s; }
+.article-grid article:nth-child(4) img { animation-delay: -8s; }
+@media(prefers-reduced-motion:reduce) { .hero-image,.category-image,img.about-image,.article-image-frame img { animation:none!important; transform: none; } }
 
 /* ============ Ambient "goo" background ============ */
 .goo-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }

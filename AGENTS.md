@@ -14,3 +14,4 @@
 - The contact form creates a downloadable draft without claiming delivery; sending messages requires a separately configured delivery service.
 - Pre-optimize shared header UI dependencies and reject outdated Vite dependency requests so React hooks and the renderer cannot use different cached module generations.
 - Keep the decorative background as one ambient layer rendered in the root layout behind a single content wrapper, so every page shares it and no page repeats the decoration itself.
+- Keep photo motion in shared CSS with stable clipped article frames and reduced-motion support, so animation never moves reading text or changes layout.
