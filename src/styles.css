@@ -167,3 +167,11 @@ img.about-image { animation: gentle-swing 9s ease-in-out infinite; transform-ori
   .tiktok-grid { grid-template-columns: 1fr; }
   .tiktok-card { max-width: 100%; }
 }
+
+/* Contact page background photo */
+.contact-page { position: relative; overflow: hidden; }
+.contact-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% center; opacity: .55; filter: saturate(.85) brightness(1.02); animation: slow-pan 26s ease-in-out infinite; }
+.contact-page::before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(105deg, color-mix(in oklab, var(--background) 94%, transparent) 0%, color-mix(in oklab, var(--background) 82%, transparent) 38%, color-mix(in oklab, var(--secondary) 70%, transparent) 100%); }
+.contact-page > .site-width { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .contact-bg { animation: none !important; transform: none; } }
+@media (max-width: 700px) { .contact-bg { opacity: .38; } }
