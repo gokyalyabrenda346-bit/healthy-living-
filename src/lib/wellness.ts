@@ -19,6 +19,10 @@ export const articles = [
   { id: 'pause', category: 'mindfulness', title: 'A little pause can change your whole day', time: '3 min read', image: tea, body: 'Find a comfortable seat and let your shoulders soften. Notice your natural breathing without trying to change it. When your attention wanders, gently return to the next breath. Try this for one minute and see how you feel. Mindfulness is not about getting rid of every thought. It is a practice of paying attention with kindness. Stop if the exercise feels uncomfortable, and choose another grounding activity.' },
   { id: 'sleep-routine', category: 'sleep', title: 'Build a wind-down routine that feels like you', time: '4 min read', image: windDown, body: 'Try keeping a fairly consistent waking time and giving yourself a quiet transition before bed. Dim the lights, put work aside, and choose something restful like reading or gentle stretching. A cool, quiet bedroom may help. Most adults need seven to nine hours, although needs vary. Persistent sleep difficulties, loud snoring, or significant daytime tiredness are good reasons to talk with a healthcare professional.' },
 ]
+// Add your TikTok video links here — paste the full share URL of each clip.
+export const tiktokVideos: { url: string; title: string }[] = [
+  { url: 'https://www.tiktok.com/@tiktok/video/7106594312292453675', title: 'Healthy living inspiration' },
+]
 export function pageHead(title: string, description: string) {
   return { meta: [{ title: `${title} — Healthy Living` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} — Healthy Living` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }
 }
