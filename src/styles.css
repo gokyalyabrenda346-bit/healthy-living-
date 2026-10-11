@@ -176,4 +176,4 @@ img.about-image { animation: gentle-swing 9s ease-in-out infinite; transform-ori
 .contact-form,.contact-aside { background: color-mix(in oklab, var(--background) 82%, transparent); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px); border: 1px solid color-mix(in oklab, var(--border) 65%, transparent); border-radius: 14px; padding: 30px; }
 .contact-aside { background: color-mix(in oklab, var(--background) 70%, transparent); }
 @media (prefers-reduced-motion: reduce) { .contact-bg { animation: none !important; transform: none; } }
-@media (max-width: 700px) { .contact-bg { opacity: .45; } .contact-form,.contact-aside { padding: 20px; } }
+@media (max-width: 700px) { .contact-bg { opacity: .68; } .contact-page::before { background: linear-gradient(160deg, color-mix(in oklab, var(--background) 74%, transparent) 0%, color-mix(in oklab, var(--background) 58%, transparent) 50%, color-mix(in oklab, var(--secondary) 52%, transparent) 100%); } .contact-form,.contact-aside { padding: 20px; background: color-mix(in oklab, var(--background) 76%, transparent); } .contact-aside { background: color-mix(in oklab, var(--background) 64%, transparent); } }
