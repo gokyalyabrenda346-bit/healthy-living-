@@ -3,6 +3,7 @@ import { ArrowRight, Leaf, Heart, Sprout, Sun, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { categories, pageHead } from '@/lib/wellness'
 import { ArticleGrid } from '@/components/wellness-content'
+import { TikTokGallery } from '@/components/tiktok-gallery'
 import salad from '@/assets/hero-breakfast.jpg'
 
 export const Route = createFileRoute('/')({ head: () => pageHead('Healthy living, one small step at a time', 'Discover everyday inspiration for healthy eating, joyful movement, mindfulness, and better rest with Healthy Living.'), component: Index })
