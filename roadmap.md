@@ -6,3 +6,4 @@
 - [x] New matching color palette
 - [x] Soft layered background (blobs, grain, gradient bands)
 - [x] Put pages in correct order across nav, mobile menu, and footer
+- [x] Responsive TikTok video gallery (embed links)
