@@ -34,8 +34,6 @@
 .site-header { background: var(--background); position: relative; z-index: 20; border-bottom: 1px solid var(--border); }
 .header-inner { height: 94px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 40px; }
 .brand { display: inline-flex; align-items: center; gap: 8px; font-size: 30px; font-weight: 700; color: var(--primary); }
-.brand-mark { width: 33px; height: 38px; display: grid; place-items: center; }
-.brand-mark svg { width: 31px; height: 31px; transform: rotate(-15deg); }
 .brand-dot { margin-left: -8px; }
 .desktop-nav { display: flex; align-items: center; justify-content: center; gap: 28px; font-size: 14px; }
 .desktop-nav a { padding-block: 12px; transition: color .2s; }
