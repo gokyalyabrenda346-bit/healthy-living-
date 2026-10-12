@@ -177,3 +177,11 @@ img.about-image { animation: gentle-swing 9s ease-in-out infinite; transform-ori
 .contact-aside { background: color-mix(in oklab, var(--background) 70%, transparent); }
 @media (prefers-reduced-motion: reduce) { .contact-bg { animation: none !important; transform: none; } }
 @media (max-width: 700px) { .contact-bg { bottom: auto; height: 330px; object-position: 50% 42%; opacity: .95; -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.45) 34px, #000 118px, #000 62%, transparent); mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.45) 34px, #000 118px, #000 62%, transparent); } .contact-page::before { background: linear-gradient(180deg, transparent 0, transparent 230px, color-mix(in oklab, var(--background) 90%, transparent) 330px, color-mix(in oklab, var(--secondary) 62%, transparent) 100%); } .contact-page > .site-width { padding-top: 250px; } .contact-form,.contact-aside { padding: 20px; background: color-mix(in oklab, var(--background) 88%, transparent); } .contact-aside { background: color-mix(in oklab, var(--background) 82%, transparent); } }
+
+/* Soft background photo treatment shared by every page */
+.photo-page { position: relative; overflow: hidden; }
+.photo-bg { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% center; opacity: .5; filter: saturate(.85) brightness(1.03); animation: slow-pan 26s ease-in-out infinite; }
+.photo-page::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(105deg, color-mix(in oklab, var(--background) 86%, transparent) 0%, color-mix(in oklab, var(--background) 74%, transparent) 45%, color-mix(in oklab, var(--secondary) 55%, transparent) 100%); }
+.photo-page > *:not(.photo-bg) { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .photo-bg { animation: none !important; transform: none; } }
+@media (max-width: 700px) { .photo-bg { opacity: .38; } }
