@@ -3,6 +3,7 @@ import { ChevronDown, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { PageBanner } from '@/components/wellness-content'
 import { pageHead } from '@/lib/wellness'
+import faqSoft from '@/assets/faq-soft.jpg'
 const questions = [
 ['Where should I start with healthy living?', 'Choose one small habit that feels achievable: add a vegetable to a meal, take a short walk, or set aside a quiet minute. Build gradually rather than changing everything at once. Your starting point can be different from someone else’s.'],
 ['Do I need to follow a strict diet?', 'Healthy eating can be flexible and enjoyable. Aim for a variety of vegetables, fruit, whole grains, protein sources, and unsaturated fats. There is room for foods you enjoy. If you have a medical condition or specific dietary needs, ask a qualified dietitian or clinician for personalised guidance.'],
@@ -13,4 +14,4 @@ const questions = [
 ['Is Healthy Living free to explore?', 'Yes. You can read all the healthy living inspiration on this website without a membership or account.'],
 ]
 export const Route = createFileRoute('/faq')({ head: () => pageHead('Frequently asked questions', 'Find helpful answers about healthy eating, movement, mindfulness, sleep, and the Healthy Living approach.'), component: FAQ })
-function FAQ() { return <><PageBanner eyebrow="A little clarity" title="Good questions. Simple answers." description="Curious about healthy living? Here are a few things you might be wondering." /><section className="site-width section"><div className="faq-list">{questions.map(([question, answer]) => <details key={question}><summary>{question}<ChevronDown size={19} /></summary><p>{answer}</p></details>)}</div></section><section className="note-band"><h2>Still have something on your mind?</h2><p>We’d love to hear your questions and ideas.</p><Button asChild><Link to="/contact">Get in touch <ArrowRight /></Link></Button></section></> }
+function FAQ() { return <><PageBanner eyebrow="A little clarity" title="Good questions. Simple answers." description="Curious about healthy living? Here are a few things you might be wondering." /><div className="photo-page"><img className="photo-bg" src={faqSoft} width={1024} height={1024} loading="lazy" alt="" aria-hidden="true" /><section className="site-width section"><div className="faq-list">{questions.map(([question, answer]) => <details key={question}><summary>{question}<ChevronDown size={19} /></summary><p>{answer}</p></details>)}</div></section><section className="note-band"><h2>Still have something on your mind?</h2><p>We’d love to hear your questions and ideas.</p><Button asChild><Link to="/contact">Get in touch <ArrowRight /></Link></Button></section></div></> }
