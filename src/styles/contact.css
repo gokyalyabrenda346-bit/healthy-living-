@@ -1,0 +1,29 @@
+/* ============ Contact page only ============ */
+.contact-form { display:grid; gap:21px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.contact-form label { display:grid; gap:8px; font-size:13px; font-weight:500; }
+.contact-form input,.contact-form textarea,.contact-form select { width:100%; background:var(--background); border:1px solid var(--border); padding:12px 14px; border-radius:6px; font:inherit; color:var(--foreground); }
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus { outline:2px solid var(--primary); outline-offset:2px; }
+.contact-form textarea { resize:vertical; min-height:150px; }
+.form-note { font-size:12px; line-height:1.7; color:var(--muted-foreground); }
+.success-note { background:var(--secondary); padding:16px; border-radius:6px; font-size:14px; line-height:1.7; }
+.contact-aside h2 { margin:0 0 18px; }
+.contact-aside p { font-size:15px; color:var(--muted-foreground); line-height:1.9; }
+.contact-aside .aside-note { margin-top:30px; padding-top:25px; border-top:1px solid var(--border); }
+
+/* Contact page background photo */
+.contact-page { position: relative; overflow: hidden; }
+.contact-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% center; opacity: .62; filter: saturate(.85) brightness(1.02); animation: slow-pan 26s ease-in-out infinite; }
+.contact-page::before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(100deg, color-mix(in oklab, var(--background) 80%, transparent) 0%, color-mix(in oklab, var(--background) 64%, transparent) 45%, color-mix(in oklab, var(--secondary) 58%, transparent) 100%); }
+.contact-page > .site-width { position: relative; z-index: 1; }
+.contact-form,.contact-aside { background: color-mix(in oklab, var(--background) 82%, transparent); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px); border: 1px solid color-mix(in oklab, var(--border) 65%, transparent); border-radius: 14px; padding: 30px; }
+.contact-aside { background: color-mix(in oklab, var(--background) 70%, transparent); }
+@media (prefers-reduced-motion: reduce) { .contact-bg { animation: none !important; transform: none; } }
+@media (max-width: 700px) {
+  .form-row { grid-template-columns:1fr; }
+  .contact-bg { bottom: auto; height: 330px; object-position: 50% 42%; opacity: .95; -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.45) 34px, #000 118px, #000 62%, transparent); mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.45) 34px, #000 118px, #000 62%, transparent); }
+  .contact-page::before { background: linear-gradient(180deg, transparent 0, transparent 230px, color-mix(in oklab, var(--background) 90%, transparent) 330px, color-mix(in oklab, var(--secondary) 62%, transparent) 100%); }
+  .contact-page > .site-width { padding-top: 250px; }
+  .contact-form,.contact-aside { padding: 20px; background: color-mix(in oklab, var(--background) 88%, transparent); }
+  .contact-aside { background: color-mix(in oklab, var(--background) 82%, transparent); }
+}

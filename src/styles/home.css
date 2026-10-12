@@ -1,0 +1,69 @@
+/* ============ Home page only ============ */
+.hero { position: relative; height: 570px; isolation: isolate; overflow: hidden; }
+.hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; z-index: -2; animation: slow-pan 18s ease-in-out infinite; transform-origin: 70% 50%; }
+.hero::before { content:''; position: absolute; inset: 0; background: var(--hero-wash); z-index: -1; }
+.hero-inner { padding-top: 67px; }
+.hero-eyebrow { display: inline-flex; padding: 8px 12px; background: var(--secondary); border-radius: 4px; }
+.hero h1 { font-family: var(--font-display); font-weight: 500; font-size: 64px; line-height: 1.16; color: var(--hero-ink); margin-top: 23px; max-width: 590px; }
+.hero h1 em { color: var(--primary); font-weight: 500; }
+.hero-description { font-size: 16px; line-height: 1.8; max-width: 420px; margin-top: 22px; color: var(--muted-foreground); }
+.hero-actions { display: flex; align-items: center; gap: 16px; margin-top: 28px; }
+.hero-actions a { height: 47px; padding-inline: 22px; }
+.hero-note { display: flex; gap: 9px; align-items: center; font-size: 12px; color: var(--muted-foreground); margin-top: 24px; }
+
+.values-band { position: relative; overflow: hidden; background: linear-gradient(115deg, var(--secondary), var(--goo-sage) 52%, var(--secondary)); }
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); padding-block: 23px; }
+.value { display: flex; justify-content: center; align-items: center; gap: 13px; border-right: 1px solid var(--border); }
+.value:last-child { border: 0; }.value svg { width: 26px; height: 26px; color: var(--primary); }
+.value strong { display: block; font-size: 13px; font-weight: 600; }.value p { font-size: 11px; margin-top: 3px; color: var(--muted-foreground); }
+.values-band::before, .values-band::after { content: ''; position: absolute; pointer-events: none; filter: blur(34px); border-radius: 52% 48% 40% 60% / 45% 55% 45% 55%; }
+.values-band::before { left: 22%; top: -60%; width: 30%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-mint) 78%, transparent), transparent 70%); }
+.values-band::after { right: 8%; bottom: -70%; width: 26%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-sage) 78%, transparent), transparent 70%); }
+.values-band .site-width { position: relative; z-index: 1; }
+
+.note-band { position: relative; overflow: hidden; background: linear-gradient(160deg, color-mix(in oklab, var(--peach) 58%, white), var(--peach) 55%, color-mix(in oklab, var(--peach) 76%, var(--goo-teal))); text-align: center; padding: 48px 20px; }
+.note-band h2 { font-family: var(--font-display); font-size: 32px; font-weight: 500; }
+.note-band p { color: var(--muted-foreground); margin: 14px auto 20px; font-size: 14px; max-width: 520px; line-height: 1.8; }
+.note-band::before, .note-band::after { content: ''; position: absolute; pointer-events: none; filter: blur(34px); border-radius: 52% 48% 40% 60% / 45% 55% 45% 55%; }
+.note-band::before { left: 6%; top: -55%; width: 32%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-peach) 80%, transparent), transparent 70%); }
+.note-band::after { right: -4%; bottom: -70%; width: 30%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-teal) 55%, transparent), transparent 70%); }
+.note-band .site-width { position: relative; z-index: 1; }
+
+.category-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 25px; }
+.category-card { display: block; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--card); transition: transform .2s, box-shadow .2s; }
+.category-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+.category-image { display: block; width: 100%; height: 216px; object-fit: cover; clip-path: inset(0); animation: photo-sway 9s ease-in-out infinite; transform-origin: 50% 60%; }
+.category-card:nth-child(2) .category-image { animation-name: photo-breathe; animation-duration: 7s; animation-delay: -2s; }
+.category-card:nth-child(3) .category-image { animation-name: vertical-drift; animation-duration: 11s; animation-delay: -5s; }
+.category-body { position: relative; background: var(--card); padding: 23px; }
+.category-body .eyebrow { font-size: 10px; }
+.category-body h3 { font-family: var(--font-display); font-size: 23px; font-weight: 500; margin-top: 9px; }
+.category-body p { font-size: 13px; color: var(--muted-foreground); line-height: 1.75; margin-top: 9px; }
+.card-link { display: flex; justify-content: space-between; align-items: center; margin-top: 21px; font-size: 12px; font-weight: 600; color: var(--primary); }
+
+/* TikTok gallery */
+.tiktok-section { padding-top: 1rem; }
+.tiktok-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; justify-items: center; }
+.tiktok-card { width: 100%; max-width: 340px; border-radius: 24px; overflow: hidden; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-shadow: 0 12px 32px -18px hsl(var(--primary) / 0.35); display: flex; justify-content: center; }
+.tiktok-card .tiktok-embed { margin: 0; width: 100%; }
+
+@media(min-width:1600px) { .hero { height:610px; } .hero-inner { padding-top:85px; } }
+@media(max-width:1050px) { .hero h1 { font-size:56px; } .hero { height:555px; } }
+@media(max-width:700px) {
+  .hero { height:590px; }
+  .hero-image { object-position:65% center; }
+  .hero::before { background:linear-gradient(90deg, oklch(0.985 0.012 80 / .98), oklch(0.985 0.012 80 / .88) 50%, oklch(0.985 0.012 80 / .45)); }
+  .hero-inner { padding-top:57px; }
+  .hero h1 { font-size:45px; line-height:1.2; }
+  .hero-description { max-width:330px; font-size:15px; }
+  .hero-actions { gap:10px; flex-wrap:wrap; }
+  .hero-actions a { padding-inline:16px; font-size:12px; }
+  .values-grid { grid-template-columns:1fr; gap:21px; padding-block:27px; }
+  .value { justify-content:start; border:0; padding-inline:15px; }
+  .value strong { font-size:13px; }
+  .category-grid { grid-template-columns:1fr; gap:25px; }
+  .category-image { height:auto; aspect-ratio:1.6; }
+  .note-band h2 { font-size:27px; }
+}
+@media (max-width: 640px) { .tiktok-grid { grid-template-columns: 1fr; } .tiktok-card { max-width: 100%; } }
+@media(prefers-reduced-motion:reduce) { .hero-image,.category-image { animation:none!important; transform: none; } }

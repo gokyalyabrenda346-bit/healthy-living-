@@ -1,0 +1,4 @@
+/* ============ Categories page only ============ */
+.filter-row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:35px; }
+.filter-row a { box-shadow:none; }
+@media(max-width:700px) { .filter-row { gap:8px; } .filter-row a { padding-inline:12px; font-size:12px; } }
