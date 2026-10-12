@@ -10,3 +10,5 @@
 - [x] Background photo on the Contact page (unique photo, readable text, phone and desktop)
 - [x] Remove the flower from the Healthy Living logo
 - [x] Background photo treatment on all pages (unique photo per page, desktop and mobile verified)
+- [ ] Give every page its own separate code (per-page stylesheets imported by each route)
+- [ ] Add a Gallery page with unique photos, nav link, and its own code
