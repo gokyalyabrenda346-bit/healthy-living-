@@ -6,6 +6,10 @@
 .gallery-item:nth-child(2) img { animation-name:vertical-drift; animation-duration:12s; animation-delay:-3s; }
 .gallery-item:nth-child(3) img { animation-name:diagonal-glide; animation-duration:11s; animation-delay:-6s; }
 .gallery-item:nth-child(4) img { animation-name:photo-sway; animation-duration:9s; animation-delay:-2s; }
+.gallery-item:nth-child(5) img { animation-name:diagonal-glide; animation-duration:12s; animation-delay:-4s; }
+.gallery-item:nth-child(6) img { animation-name:vertical-drift; animation-duration:11s; animation-delay:-7s; }
+.gallery-item:nth-child(7) img { animation-name:photo-sway; animation-duration:10s; animation-delay:-5s; }
+.gallery-item:nth-child(8) img { animation-name:photo-breathe; animation-duration:9s; animation-delay:-6s; }
 .gallery-item figcaption { padding:16px 18px 20px; }
 .gallery-item h3 { font-family:var(--font-display); font-weight:500; font-size:20px; }
 .gallery-item p { font-size:13px; line-height:1.7; color:var(--muted-foreground); margin-top:6px; }
