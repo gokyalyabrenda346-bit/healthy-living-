@@ -1,6 +1,11 @@
 /* ============ Gallery page only ============ */
-.gallery-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; }
-.gallery-item { margin:0; border-radius:14px; overflow:hidden; background:color-mix(in oklab, var(--card) 85%, transparent); border:1px solid var(--border); box-shadow:var(--shadow-soft); }
+/* Bootstrap loads before this sheet; keep the site fonts and colours on top of it. */
+body { font-family: var(--font-sans); background: var(--background); color: var(--foreground); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 500; }
+.page-title { font-family: var(--font-display); font-weight: 500; }
+
+/* Bootstrap grid + card carry the layout; the site tokens carry the look. */
+.gallery-item { overflow:hidden; background:var(--card); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow-soft); }
 .gallery-frame { overflow:hidden; aspect-ratio:1; }
 .gallery-frame img { display:block; width:100%; height:100%; object-fit:cover; animation:photo-breathe 10s ease-in-out infinite; }
 .gallery-item:nth-child(2) img { animation-name:vertical-drift; animation-duration:12s; animation-delay:-3s; }
@@ -13,6 +18,4 @@
 .gallery-item figcaption { padding:16px 18px 20px; }
 .gallery-item h3 { font-family:var(--font-display); font-weight:500; font-size:20px; }
 .gallery-item p { font-size:13px; line-height:1.7; color:var(--muted-foreground); margin-top:6px; }
-@media(max-width:1050px) { .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media(max-width:700px) { .gallery-grid { grid-template-columns:1fr; } }
 @media(prefers-reduced-motion:reduce) { .gallery-frame img { animation:none!important; transform:none; } }
