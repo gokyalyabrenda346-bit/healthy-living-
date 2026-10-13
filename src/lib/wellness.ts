@@ -23,6 +23,6 @@ export const articles = [
 export const tiktokVideos: { url: string; title: string }[] = [
   { url: 'https://www.tiktok.com/@tiktok/video/7106594312292453675', title: 'Healthy living inspiration' },
 ]
-export function pageHead(title: string, description: string) {
-  return { meta: [{ title: `${title} — Healthy Living` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} — Healthy Living` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }
+export function pageHead(title: string, description: string, css?: string) {
+  return { links: css ? [{ rel: 'stylesheet', href: css }] : [], meta: [{ title: `${title} — Healthy Living` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} — Healthy Living` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }
 }

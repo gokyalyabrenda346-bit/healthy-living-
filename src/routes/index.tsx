@@ -1,3 +1,4 @@
+import pageCss from '@/styles/home.css?url'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowRight, Leaf, Heart, Sprout, Sun, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -7,7 +8,7 @@ import { TikTokGallery } from '@/components/tiktok-gallery'
 import salad from '@/assets/hero-breakfast.jpg'
 import homeSoft from '@/assets/home-soft.jpg'
 
-export const Route = createFileRoute('/')({ head: () => pageHead('Healthy living, one small step at a time', 'Discover everyday inspiration for healthy eating, joyful movement, mindfulness, and better rest with Healthy Living.'), component: Index })
+export const Route = createFileRoute('/')({ head: () => pageHead('Healthy living, one small step at a time', 'Discover everyday inspiration for healthy eating, joyful movement, mindfulness, and better rest with Healthy Living.', pageCss), component: Index })
 function Index() {
   return <>
     <div className="photo-page">

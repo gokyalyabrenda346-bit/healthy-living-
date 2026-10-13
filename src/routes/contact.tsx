@@ -1,3 +1,4 @@
+import pageCss from '@/styles/contact.css?url'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState } from 'react'
 import { Download, Check } from 'lucide-react'
@@ -5,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { PageBanner } from '@/components/wellness-content'
 import { pageHead } from '@/lib/wellness'
 import contactLight from '@/assets/contact-light.jpg'
-export const Route = createFileRoute('/contact')({ head: () => pageHead('Contact us', 'Share a question, an idea, or feedback with Healthy Living. Prepare your message using our contact form.'), component: Contact })
+export const Route = createFileRoute('/contact')({ head: () => pageHead('Contact us', 'Share a question, an idea, or feedback with Healthy Living. Prepare your message using our contact form.', pageCss), component: Contact })
 function Contact() {
  const [ready, setReady] = useState(false)
  function submit(event: React.FormEvent<HTMLFormElement>) { event.preventDefault(); const data = new FormData(event.currentTarget); const text = `Healthy Living contact draft\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nTopic: ${data.get('topic')}\n\n${data.get('message')}`; const url = URL.createObjectURL(new Blob([text], { type: 'text/plain' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = 'healthy-living-message.txt'; anchor.click(); URL.revokeObjectURL(url); setReady(true) }
