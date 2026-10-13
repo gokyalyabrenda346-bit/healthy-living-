@@ -7,3 +7,12 @@
 .faq-list details p { color:var(--muted-foreground); font-size:15px; line-height:1.9; padding:0 36px 25px 0; }
 .faq-page .note-band { margin-top: 20px; }
 @media(max-width:700px) { .faq-list summary { font-size:15px; } }
+.note-band { position: relative; overflow: hidden; background: linear-gradient(160deg, color-mix(in oklab, var(--peach) 58%, white), var(--peach) 55%, color-mix(in oklab, var(--peach) 76%, var(--goo-teal))); text-align: center; padding: 48px 20px; }
+.note-band h2 { font-family: var(--font-display); font-size: 32px; font-weight: 500; }
+.note-band p { color: var(--muted-foreground); margin: 14px auto 20px; font-size: 14px; max-width: 520px; line-height: 1.8; }
+.note-band::before, .note-band::after { content: ''; position: absolute; pointer-events: none; filter: blur(34px); border-radius: 52% 48% 40% 60% / 45% 55% 45% 55%; }
+.note-band::before { left: 6%; top: -55%; width: 32%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-peach) 80%, transparent), transparent 70%); }
+.note-band::after { right: -4%; bottom: -70%; width: 30%; aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--goo-teal) 55%, transparent), transparent 70%); }
+.note-band .site-width { position: relative; z-index: 1; }
+  .note-band h2 { font-size:27px; }
+@media(max-width:700px) { .note-band h2 { font-size:27px; } }

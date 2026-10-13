@@ -1,3 +1,4 @@
+import pageCss from '@/styles/faq.css?url'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ChevronDown, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -13,5 +14,5 @@ const questions = [
 ['Is the information on Healthy Living medical advice?', 'No. Our content is general educational inspiration, not individual medical advice, diagnosis, or treatment. Consult a qualified healthcare professional about your personal health needs, especially before making changes related to an existing condition.'],
 ['Is Healthy Living free to explore?', 'Yes. You can read all the healthy living inspiration on this website without a membership or account.'],
 ]
-export const Route = createFileRoute('/faq')({ head: () => pageHead('Frequently asked questions', 'Find helpful answers about healthy eating, movement, mindfulness, sleep, and the Healthy Living approach.'), component: FAQ })
+export const Route = createFileRoute('/faq')({ head: () => pageHead('Frequently asked questions', 'Find helpful answers about healthy eating, movement, mindfulness, sleep, and the Healthy Living approach.', pageCss), component: FAQ })
 function FAQ() { return <><PageBanner eyebrow="A little clarity" title="Good questions. Simple answers." description="Curious about healthy living? Here are a few things you might be wondering." /><div className="photo-page"><img className="photo-bg" src={faqSoft} width={1024} height={1024} loading="lazy" alt="" aria-hidden="true" /><section className="site-width section"><div className="faq-list">{questions.map(([question, answer]) => <details key={question}><summary>{question}<ChevronDown size={19} /></summary><p>{answer}</p></details>)}</div></section><section className="note-band"><h2>Still have something on your mind?</h2><p>We’d love to hear your questions and ideas.</p><Button asChild><Link to="/contact">Get in touch <ArrowRight /></Link></Button></section></div></> }
