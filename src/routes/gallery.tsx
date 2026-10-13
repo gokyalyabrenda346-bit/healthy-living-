@@ -18,7 +18,7 @@ export const Route = createFileRoute('/gallery')({ head: () => pageHead('Gallery
 
 function Gallery() {
   return <main>
-    <PageBanner eyebrow="Gallery" title="Healthy living, in pictures." text="Small, everyday moments that inspire a healthier, happier life." />
+    <PageBanner eyebrow="Gallery" title="Healthy living, in pictures." description="Small, everyday moments that inspire a healthier, happier life." />
     <section className="site-width section"><div className="gallery-grid">{photos.map(p => <figure className="gallery-item" key={p.title}><div className="gallery-frame"><img src={p.src} width={1024} height={1024} loading="lazy" alt={p.title} /></div><figcaption><h3>{p.title}</h3><p>{p.text}</p></figcaption></figure>)}</div></section>
   </main>
 }
